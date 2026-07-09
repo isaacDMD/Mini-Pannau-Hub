@@ -13,22 +13,22 @@ class PannauController extends Controller
         return Pannau::all();
     }
 
-    public function store(Request $request){
+    public function store(CreatePanneauRequest $request){
 
-        $validated = $request->validate(CreatePanneauRequest::rules());
+        $validated = $request->validated();
         $pannau = Pannau::create($validated);
         return response()->json($pannau, 201);
 
     }
 
-    public function show(Pannau $id){
+    public function show($id){
 
         $pannau = Pannau::findOrFail($id);
-        return response()->json($pannau,200);
+        return response()->json($pannau,201);
     }
 
-    public function update(Request $request, Pannau $pannau){
-        $validated = $request->validate(UpdatePanneauRequest::rules());
+    public function update(UpdatePanneauRequest $request, Pannau $pannau){
+        $validated = $request->validated();
         $pannau = Pannau::findOrFail($pannau->id);
         $pannau->update($validated);
         return response()->json($pannau,200);
