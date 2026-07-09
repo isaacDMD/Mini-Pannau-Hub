@@ -25,7 +25,7 @@ class CreatePanneauRequest extends FormRequest
         return [
             'code_pannau' => 'required|string',
             'zone'=> 'required|string',
-            'prix_mensuel'=> 'required|decimal',
+            'prix_mensuel'=> 'required|integer',
             'occupe'=> 'required|boolean',
         ];
     }

@@ -21,19 +21,19 @@ class PannauController extends Controller
 
     }
 
-    public function show($id){
+    public function show(int $id){
 
         $pannau = Pannau::findOrFail($id);
-        return response()->json($pannau,201);
+        return response()->json($pannau,200);
     }
 
-    public function update(UpdatePanneauRequest $request, Pannau $pannau){
+    public function update(UpdatePanneauRequest $request, int $id){
         $validated = $request->validated();
-        $pannau = Pannau::findOrFail($pannau->id);
+        $pannau = Pannau::findOrFail($id);
         $pannau->update($validated);
         return response()->json($pannau,200);
     }
-    public function destroy(Pannau $id){
+    public function destroy(int $id){
         $paanau = Pannau::findOrFail($id);
         $paanau->delete();
         return response()->json(["message "=>"message supprimé"],200);

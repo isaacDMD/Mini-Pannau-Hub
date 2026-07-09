@@ -16,4 +16,4 @@ Route::post('panneau', [PannauController::class,'store']);
 
 Route::put('panneau/{id}', [PannauController::class,'update']);
 
-Route::delete('panneau/{id}', [PannauController::class,'delete']);
+Route::delete('panneau/{id}', [PannauController::class,'destroy']);

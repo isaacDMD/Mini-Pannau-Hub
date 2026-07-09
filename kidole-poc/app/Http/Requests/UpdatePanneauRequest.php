@@ -25,7 +25,7 @@ class UpdatePanneauRequest extends FormRequest
         return [
             "code_pannau"=> "sometimes|string",
             "zone"=> "sometimes|string",
-            "prix_mensuel"=> "sometimes|decimal",
+            "prix_mensuel"=> "sometimes|integer",
             "occupe"=> "sometimes|boolean",
         ];
     }
