@@ -36,7 +36,7 @@ class PannauController extends Controller
     public function destroy(Pannau $id){
         $paanau = Pannau::findOrFail($id);
         $paanau->delete();
-        return response()->json("panneau supprimé",200);
+        return response()->json(["message "=>"message supprimé"],200);
     }
 
 }
