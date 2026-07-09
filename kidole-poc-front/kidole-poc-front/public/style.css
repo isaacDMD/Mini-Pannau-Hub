@@ -1,0 +1,103 @@
+/* Le conteneur principal de la page */
+.container {
+    padding-top: 60px !important; /* Ajoute un grand espace propre en haut de la page */
+}
+
+/* Le conteneur de la grille (ADAPTATIF AUTOMATIQUE) */
+.panneaux-grid {
+    display: grid;
+    /* Crée autant de colonnes de minimum 250px que l'écran peut en contenir */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 100px;
+    margin-top: 20px;
+}
+
+/* Le style de la carte */
+.panneau-card {
+    width: 100%; /* Prend toute la largeur de sa colonne de grille automatique */
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color: var(--card-background-color);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Effet au survol */
+.panneau-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image de la carte */
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+/* Espacement du texte interne */
+.card-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    /* Aligne les textes à gauche, mais on va pouvoir pousser le bouton à droite */
+    align-items: flex-start; 
+}
+
+.card-content h2 {
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Style du bouton réduit (ALIGNÉ À DROITE) */
+.btn-sm {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    width: auto !important;
+    display: inline-block;
+    align-self: flex-end; /* Cette ligne magique pousse le bouton tout à droite de la carte */
+}
+
+.grosse-card-detail {
+    padding: 2rem !important;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.img-detail {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.infos-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Centre le loader verticalement et horizontalement sur l'écran */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Prend la moitié de la hauteur de l'écran */
+}
+
+.loading-container article {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
